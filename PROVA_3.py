@@ -1,3 +1,5 @@
+#11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
 Uma turma de programação competitiva é composta por somente dezenas de alunos que fizeram uma aposta onde os vencedores de uma prova
 serão todos aqueles que tiverem nota final acima da média geral da turma nesta prova. Nem todos os alunos participam da prova. 
 Faça um programa para, inicialmente, receber a indicação de quantos alunos (um número inteiro positivo) participam de uma determinada prova, 
@@ -12,8 +14,8 @@ Exemplos de entrada e saída:
 
 Entrada          SAÍDA           Entrada        Saída
 4                 4                3              8
-2                 5                2              9
-3                                  8
+2                 4                2              9
+3                 5                8
 4                                  9
 5
 
@@ -24,12 +26,12 @@ for i in range(n):
     l.append(int(input('Informe uma nota: ')))
     
 media=sum(l)/len(l)
-cont=0
+
 for i in l:
-    if i>=media and i!=cont:
-        cont+=i
+    if i>=media:
         print(i)
 
+#222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
 
 Faça um programa que permita ao usuário informar uma relação de valores. 
 O usuário informa uma quantidade indeterminada de valores inteiros positivos 
@@ -52,6 +54,8 @@ for p in l:
 print()        
 print(cont)
 
+#3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+
 Uma empresa de desenvolvimento de software trabal trabalha somente com uma linguagem de programação criada intemamente. 
 O procedimento para selecionar novos desenvolvedores é disponibilizar testes on-line para que 
 os candidatos resolvam questões especificamente elaboradas para o processo seletivo. 
@@ -68,25 +72,14 @@ O programa calcula as médias e ao final apresenta a relação dos candidatos co
 
 alunos=[]
 notas=[]
-
-aluno=1
-while aluno!=0:
-    m=[]
+aluno=int(input('aluno: '))
+while (aluno!=0):
+    if aluno in alunos:
+        n = float(input('nota: '))
+        notas[alunos.index(aluno)].append(n)
+    else:    
+        alunos.append(aluno)
+        notas.append([float(input('nota: '))])
     aluno=int(input('aluno: '))
-    if aluno==0:
-        break
-    else:
-        if aluno in alunos:
-            n=float(input('nota: '))
-            notas[alunos.index(aluno)].append(n)
-            
-        else:    
-            alunos.append(aluno)
-            n=float(input('nota: '))
-            m.append(n)
-            notas.append(m)
-
-cont=0
-while cont!=len(alunos):
-    print(f'{alunos[cont]} {(sum(notas[cont]))/(len(notas[cont])):.1f}')
-    cont+=1
+for i in range(len(alunos)):
+    print(f'{alunos[i]} {(sum(notas[i]))/(len(notas[i])):.1f}')
