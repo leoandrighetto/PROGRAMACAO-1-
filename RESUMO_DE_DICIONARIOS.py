@@ -5,8 +5,8 @@ leonardo={
     "Nome": "Leonardo Andrighetto Linhares" ,
     "Telefone": "555-(51) 99387-7613",
     "Endereço": "Acesso Bonar Figueiro 2537 Restinga Porto Alegre"}
-print(f'Dicionario1:{leonardo}')
-print()
+print(f'Dicionario1 (Leonardo):{leonardo}')
+print('------------')
 
                 #222222222
 leonardo2 = {}
@@ -14,27 +14,29 @@ leonardo2["Nome"]="Leonardo Andrighetto Linhares"
 leonardo2["Telefone"]="993877613"
 leonardo2["Endereço"]="Rua Tal"
 
-print(f'Dicionario2: {leonardo2}')
-print()
+print(f'Dicionario2 (Leonardo2): {leonardo2}')
+print('------------')
 
 
 
 #CONSULTAS USANDO " .get()  "
 
+#
+print(f'Comando -> "leonardo.get("Nome")" -> : {leonardo.get("Nome")}')
+#
+print('------------')
+
+#PARA ADICIONAR OU ALTERAR CHAVES USANDO    "  update()  "
 
 #               ---
 print(f'Nome antes de Alterar com update: {leonardo2.get("Nome")}')
 #    (dicionario.get('chave'))
-print()
+print('------------')
 
-
-
-
-#PARA ADICIONAR OU ALTERAR CHAVES USANDO    "  update()  "
 
 leonardo.update({"Nome": "Leleo"})
 
-print(f'Depois: {leonardo.get("Nome")}')
+print(f'Depois de mudar Nome usando Update (Leonardo.update) -> : {leonardo.get("Nome")}')
 print('------------')
                                 #adicionando uma nova chave:
 leonardo.update({"Nome da Mãe": 'Ivete Andrighetto'})
@@ -54,8 +56,7 @@ if "Nome" in leonardo:
     print(f'VERIFICANDO A EXISTÊNCIA DE UMA CHAVE: {leonardo.get("Nome")}')
     
 print('------------')
-
-
+from operator import itemgetter
 
 #PARA OBTER AS CHAVES DE UM DICIONARIO (EM LISTA):
 print('Para obter as CHAVES de um dicionario:')
@@ -85,9 +86,43 @@ for a in leonardo.items():
 print('------------')
 
 #ORDENANDO ELEMENTOS usando SORTED:
+print('------------')
 print("ORDENANDO ELEMENTOS usando SORTED")
-for i, a in sorted(leonardo.items()):
+for i in sorted(leonardo):
+    print(i)
+
+print('------------')
+
+print("ORDENANDO ELEMENTOS usando SORTED com valores em ordem crescente")
+print("---")
+compras={}
+compras["Cliente 1"]=10
+compras["Cliente 2"]=50
+compras["Cliente 3"]=30
+compras["Cliente 4"]=20
+
+print("for i in sorted(compras.values(), reverse=True)")
+print("print(i)")
+
+for i in sorted(compras.values(),reverse=True):
+    print(i)
+    
+print('------------')
+
+print("ORDENANDO ELEMENTOS baseado nos valores: itemgetter()")
+print('------------')
+print("Compras dos clientes em ordem decrescente:")
+for i, a in sorted(compras.items(), key=itemgetter(1), reverse=True):
+    print(f'{i}--{a}')
+
+
+print('------------')
+
+print("ORDENANDO ELEMENTOS usando SORTED 'chave(i)' e valor(a)'")
+for i, a in sorted(compras.items()):
     print(f'{i} ---- {a}')
+
+print('------------')
 
 #CLONANDO UM DICIONARIO:
 
