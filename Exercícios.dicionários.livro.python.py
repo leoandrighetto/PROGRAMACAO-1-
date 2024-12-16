@@ -3,10 +3,10 @@
 from operator import itemgetter
 
 Vendas = {}
-Vendas ["Coca-cola"]=8055515
-Vendas ["Multisom"]=632151
-Vendas ["Lacoste"]=55165
-Vendas ["A.G.N.C. Guarda Negra"]=9846519986
+Vendas ["Coca-cola"]=80
+Vendas ["Multisom"]=6
+Vendas ["Lacoste"]=555
+Vendas ["A.G.N.C. Guarda Negra"]=10
 print("Empresas:")
 print()
 for i in Vendas:
@@ -18,7 +18,6 @@ cont=1
 for i, a in sorted(Vendas.items(), key=itemgetter(1),reverse=True):
     print(f'{cont}ª = {i} - {a}')
     cont+=1
-
 
 #222222222222222222222222222222222
 
