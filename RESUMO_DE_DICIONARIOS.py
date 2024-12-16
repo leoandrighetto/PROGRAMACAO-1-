@@ -88,3 +88,18 @@ print('------------')
 print("ORDENANDO ELEMENTOS usando SORTED")
 for i, a in sorted(leonardo.items()):
     print(f'{i} ---- {a}')
+
+#CLONANDO UM DICIONARIO:
+
+copia= dict(leonardo)
+print(f"clonando o dicionario leonardo, atribuindo a variarel copia: print(copia) -> {copia}")
+
+print('------------')
+
+
+#REMOVENDO ELEMENTOS USANDO POP:
+leonardo.pop("Nome")
+leonardo.pop("Telefone")
+print(f'removendo elementos usando o comando -> leonardo.pop("Nome") e telefone em outra linha.: {leonardo}')
+
+print('------------')
