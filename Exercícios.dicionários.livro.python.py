@@ -35,22 +35,16 @@ ordenados pelo nome do aluno.
 alunos={}
 
 while True:
-    nome= input('Nome do aluno: ')
-    peso = float(input('Peso do aluno: '))
-    altura=float(input('Altura do aluno: '))
     aluno=[]
-    aluno.append(peso)
-    aluno.append(altura)
-    alunos.update({nome: aluno})
-    a=input("Adicionar mais alunos (S/N)?   ")
-    if a == "N" or a=="n":
-        break
+    nome = input('Nome do aluno: ')
+    aluno.append(float(input('Peso do aluno: ')))
+    aluno.append(float(input('Altura do aluno: ')))
 
-print(alunos)
-print()
-for i, a in alunos.items():
-    print(a)
-print()
+    alunos.update({nome: aluno})
+
+    add=input("Adicionar mais alunos (S/N)?   ")
+    if add == "N" or add=="n":
+        break
 
 # OS DICIONÁRIOS ARMAZENAM SEUS DADOS EM {CHAVE: VALOR}. USANDO DUAS VARIAVEIS DENTRO DE UM FOR, E ACESSANDO TODOS OS
 #ITENS DO DICIONÁRIO, AO ACESSAR A PRIMEIRE VARIÁVEL, ESTAMOS ACESSANDO AS CHAVES, SE ACESSARMOS SEGUNDA VARIÁVEL, OS VALORES.
@@ -58,7 +52,7 @@ print()
 print(20 * "-")
 
 for i, a in alunos.items():
-    print(f'O IMC DO(A) ALUNO(A) {i} É: {(a[0]/a[1]**2):.2f}')
+    print(f'O IMC do(A) aluno(A) {i} é: {(a[0]/a[1]**2):.2f}')
 -------------
 
 3. Construa um programa que cadastre diversos voos aéreos,
