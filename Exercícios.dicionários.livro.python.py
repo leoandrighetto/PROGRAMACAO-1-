@@ -53,6 +53,7 @@ print(20 * "-")
 
 for i, a in alunos.items():
     print(f'O IMC do(A) aluno(A) {i} é: {(a[0]/a[1]**2):.2f}')
+    
 -------------
 
 3. Construa um programa que cadastre diversos voos aéreos,
@@ -61,9 +62,47 @@ voo como sendo a chave. Com base no que foi armazenado
 no dicionário, o programa deve informar a quantidade de voos
 cuja origem é Natal. 
 
+voos = {}
+cont=0
+while True:
+    n=int(input('Número de voo: '))
+    o=input('Origem: ')
+    if o=="Natal" or o=="natal":
+        cont+=1
+    d=input('Destino: ')
+    voos.update({n:[o,d]})
+    add=input('Deseja registrar outro voo (S/N)?   ')
+    if add=="n" or add=="N":
+        break
 
+print(f'{cont} voos tem como origem Natal')
 
+--------------
 
+4. Com base no dicionário da questão anterior, construa um
+programa para remover os voos cujo destino é Recife. Em seguida, imprima a nova listagem de voos.
+
+voo={}
+
+while True:
+    p = []
+    n=int(input('n: '))
+    p.append(input('o: '))
+    p.append(input('d: '))
+    voo.update({n: p})
+    add= input('Add mais um voo (S/N):  ')
+    if add.lower() == 'n':
+        break
+        
+remover=[]
+for i,a in voo.items():
+    if a[1].lower() == 'recife':
+        remover.append(i)
+        
+for i in remover:
+    voo.pop(i)
+    
+print(voo)
 
 
 
