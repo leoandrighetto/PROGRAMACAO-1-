@@ -1,9 +1,10 @@
+'''
 1 Um usuário do departamento de vendas de uma empresa necessita de um relatório que apresente seus clientes potenciais.
 Para isso, é necessário que o relatório seja ordenado do cliente
 que mais comprou para o que menos comprou. Os dados de
 entrada são razão social e valor total de compras. Considere a
 razão social como sendo a chave identificadora do cliente.
-
+'''
 -----------------------------
 
 from operator import itemgetter
@@ -26,10 +27,11 @@ for i, a in sorted(Vendas.items(), key=itemgetter(1),reverse=True):
     cont+=1
 
 ------------------------------
-
+'''
 2. Construa um programa no qual o usuário informe o nome, a
 estatura e o peso de vários alunos de uma turma. Após o cadastro, o programa deve imprimir o nome e o IMC de cada aluno
 ordenados pelo nome do aluno.
+'''
 ------------
 
 alunos={}
@@ -55,13 +57,13 @@ for i, a in alunos.items():
     print(f'O IMC do(A) aluno(A) {i} é: {(a[0]/a[1]**2):.2f}')
     
 -------------
-
+'''
 3. Construa um programa que cadastre diversos voos aéreos,
 bem como sua origem e seu destino. Considere o número do
 voo como sendo a chave. Com base no que foi armazenado
 no dicionário, o programa deve informar a quantidade de voos
 cuja origem é Natal. 
-
+'''
 voos = {}
 cont=0
 while True:
@@ -78,9 +80,10 @@ while True:
 print(f'{cont} voos tem como origem Natal')
 
 --------------
-
+'''
 4. Com base no dicionário da questão anterior, construa um
 programa para remover os voos cujo destino é Recife. Em seguida, imprima a nova listagem de voos.
+'''
 
 voo={}
 
@@ -106,10 +109,11 @@ print(voo)
 
 
 -------------
+'''
 5. Ainda com base no dicionário da questão 3, construa um programa em que, após os voos terem sido cadastrados, o usuário
 possa modificar a origem e/ou o destino de um determinado
 voo. Ao fim, o programa deve imprimir a nova listagem de voos.
-
+'''
 
 voos={}
 
@@ -151,7 +155,7 @@ if op.lower() == "s":
 
     if op1.lower() == "n":
         print()
-        print('OBRIGADO E FAÇA UMA BOA VIAGEM!')
+        print('Obrigado por experimentar meu programa! S2')
 
     else:
         print()
@@ -177,11 +181,54 @@ if op.lower() == "s":
             print()
             print('Alterado!!Boa viagem')
         else:
-            print('Obrigado por experimentar meu programa! S2')
-
+            while True:
+                print('Por favor, digite uma opção Válida:')
+                op2=input('Você gostaria de alterar a ORIGEM, DESTINO ou sair do programa ("N")?  ')
+                if op2.lower() in ['s', 'n']:
+                    break
+            
 else:
-    print('Boa viagem!')
+    print('Obrigado por experimentar meu programa! S2')
 
+'''
+6. Crie um programa para uma nova plataforma de vídeo sob
+demanda o qual deve armazenar o título da série e o nome
+dos 2 principais atores. Ao final, o programa deve exibir uma
+listagem contendo, de forma ordenada, o nome da série e os
+nomes dos atores.
+'''
+ssvid = {}
+
+while True:
+    nome=input('Nome da Série: ')
+    p1=input('Ator principal: ')
+    p2=input('Ator secundário: ')
+    ssvid.update({nome: [p1,p2]})
+
+    print()
+    per=input('Deseja adicionar mais dados (S/N)? ')
+    print()
+
+    if per.lower()== 'n':
+        print(20 *'-')
+        print('Tabela se Séries:')
+        print(20 *'-')
+        break
+    elif per.lower()=="s":
+        continue
+    else:
+        while True:
+            print('por favor digite uma opção válida:')
+            per=input('Deseja adicionar mais dados (S/N)? ')
+            if per.lower() in ['s', 'n']:
+                break
+
+for i, a in sorted(ssvid.items()):
+    print(10*"~")
+    print(f'Série: {i}')
+    print(f'Ator principal: {a[0]}')
+    print(f'Ator Coadjuvante: {a[1]}')
+    print(10*"~")
 
 
 
