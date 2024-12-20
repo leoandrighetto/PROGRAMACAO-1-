@@ -1,4 +1,4 @@
-Um usuário do departamento de vendas de uma empresa necessita de um relatório que apresente seus clientes potenciais.
+1 Um usuário do departamento de vendas de uma empresa necessita de um relatório que apresente seus clientes potenciais.
 Para isso, é necessário que o relatório seja ordenado do cliente
 que mais comprou para o que menos comprou. Os dados de
 entrada são razão social e valor total de compras. Considere a
@@ -105,10 +105,82 @@ for i in remover:
 print(voo)
 
 
+-------------
+5. Ainda com base no dicionário da questão 3, construa um programa em que, após os voos terem sido cadastrados, o usuário
+possa modificar a origem e/ou o destino de um determinado
+voo. Ao fim, o programa deve imprimir a nova listagem de voos.
 
 
+voos={}
 
+while True:
+    n=input('Número do voo: ')
+    l=[]
+    l.append(input('Origem: '))
+    l.append(input('Destino: '))
+    voos.update({n: l})
 
+    print()
+    print(20 * '-')
+    per=input('Deseja adicionar mais voos (S/N)?   ')
+    print()
+    print(20 * '-')
+
+    if per.lower() =='n':
+        print('Obrigado por experimentar meu programa! S2')
+        break
+
+print()
+print(20 * '-')
+print()
+
+for i, a in voos.items(): 
+    print(f'O voo n° {i} tem como origem {a[0]} e destino {a[1]}')
+
+print()
+op= input('Deseja alterar a origem ou destino de algum voo (S/N)?  ')
+print()
+
+if op.lower() == "s":
+
+    for i, a in voos.items():
+        print(f"{i} --- {a}")
+    print()
+    op1=(input('Digite o número de voo que você gostaria de alterar ou digite "N" para sair: '))
+    
+
+    if op1.lower() == "n":
+        print()
+        print('OBRIGADO E FAÇA UMA BOA VIAGEM!')
+
+    else:
+        print()
+        op2=input('Você gostaria de alterar a ORIGEM, DESTINO ou sair do programa ("N")?  ')
+        if op2.lower() == "origem":
+            print()
+            op3=input('Qual a nova origem? ')
+
+            voos [op1][0] = op3
+
+            for i, a in voos.items():
+                print(f'Voo: {i}, tem origem: {a[0]} e Destino: {a[1]}')
+                print()
+            print()
+            print('Alterado!! Boa viagem')
+
+        elif op2.lower()=="destino:":
+            op4=input('Qual o novo destino? ')
+            voos [op1][1] = op4
+            for i, a in voos.items():
+                print(f'Voo: {i}, tem origem: {a[0]} e Destino: {a[1]}')
+                print()
+            print()
+            print('Alterado!!Boa viagem')
+        else:
+            print('Obrigado por experimentar meu programa! S2')
+
+else:
+    print('Boa viagem!')
 
 
 
