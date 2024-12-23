@@ -27,11 +27,13 @@ for i, a in sorted(Vendas.items(), key=itemgetter(1),reverse=True):
     cont+=1
 
 ------------------------------
+
 '''
 2. Construa um programa no qual o usuário informe o nome, a
 estatura e o peso de vários alunos de uma turma. Após o cadastro, o programa deve imprimir o nome e o IMC de cada aluno
 ordenados pelo nome do aluno.
 '''
+
 ------------
 
 alunos={}
@@ -47,9 +49,10 @@ while True:
     add=input("Adicionar mais alunos (S/N)?   ")
     if add == "N" or add=="n":
         break
-
-# OS DICIONÁRIOS ARMAZENAM SEUS DADOS EM {CHAVE: VALOR}. USANDO DUAS VARIAVEIS DENTRO DE UM FOR, E ACESSANDO TODOS OS
-#ITENS DO DICIONÁRIO, AO ACESSAR A PRIMEIRE VARIÁVEL, ESTAMOS ACESSANDO AS CHAVES, SE ACESSARMOS SEGUNDA VARIÁVEL, OS VALORES.
+'''
+OS DICIONÁRIOS ARMAZENAM SEUS DADOS EM {CHAVE: VALOR}. USANDO DUAS VARIAVEIS DENTRO DE UM FOR, E ACESSANDO TODOS OS
+ITENS DO DICIONÁRIO, AO ACESSAR A PRIMEIRE VARIÁVEL, ESTAMOS ACESSANDO AS CHAVES, SE ACESSARMOS SEGUNDA VARIÁVEL, OS VALORES.
+'''
 
 print(20 * "-")
 
@@ -57,6 +60,7 @@ for i, a in alunos.items():
     print(f'O IMC do(A) aluno(A) {i} é: {(a[0]/a[1]**2):.2f}')
     
 -------------
+
 '''
 3. Construa um programa que cadastre diversos voos aéreos,
 bem como sua origem e seu destino. Considere o número do
@@ -64,6 +68,7 @@ voo como sendo a chave. Com base no que foi armazenado
 no dicionário, o programa deve informar a quantidade de voos
 cuja origem é Natal. 
 '''
+
 voos = {}
 cont=0
 while True:
@@ -80,6 +85,7 @@ while True:
 print(f'{cont} voos tem como origem Natal')
 
 --------------
+
 '''
 4. Com base no dicionário da questão anterior, construa um
 programa para remover os voos cujo destino é Recife. Em seguida, imprima a nova listagem de voos.
@@ -109,6 +115,7 @@ print(voo)
 
 
 -------------
+
 '''
 5. Ainda com base no dicionário da questão 3, construa um programa em que, após os voos terem sido cadastrados, o usuário
 possa modificar a origem e/ou o destino de um determinado
@@ -176,7 +183,7 @@ if op.lower() == "s":
             op4=input('Qual o novo destino? ')
             voos [op1][1] = op4
             for i, a in voos.items():
-                print(f'Voo: {i}, tem origem: {a[0]} e Destino: {a[1]}')
+                    print(f'Voo: {i}, tem origem: {a[0]} e Destino: {a[1]}')
                 print()
             print()
             print('Alterado!!Boa viagem')
@@ -199,29 +206,30 @@ nomes dos atores.
 '''
 ssvid = {}
 
+nome=input('Nome da Série: ')
+p1=input('Ator principal: ')
+p2=input('Ator secundário: ')
+ssvid.update({nome: [p1,p2]})
+
 while True:
-    nome=input('Nome da Série: ')
-    p1=input('Ator principal: ')
-    p2=input('Ator secundário: ')
-    ssvid.update({nome: [p1,p2]})
-
     print()
-    per=input('Deseja adicionar mais dados (S/N)? ')
-    print()
+    per = input('Deseja adicionar mais dados (S/N)? ')
 
-    if per.lower()== 'n':
-        print(20 *'-')
-        print('Tabela se Séries:')
-        print(20 *'-')
+    if per.lower()=='s':
+        print()
+        nome = input('Nome da Série: ')
+        p1 = input('Ator principal: ')
+        p2 = input('Ator secundário: ')
+        ssvid.update({nome: [p1, p2]})
+
+    elif per.lower()=='n':
+        print()
+        print('Obrigado por usar este programa!')
         break
-    elif per.lower()=="s":
-        continue
+
     else:
-        while True:
-            print('por favor digite uma opção válida:')
-            per=input('Deseja adicionar mais dados (S/N)? ')
-            if per.lower() in ['s', 'n']:
-                break
+        print()
+        print('Digite uma opção válida!')
 
 for i, a in sorted(ssvid.items()):
     print(10*"~")
@@ -230,10 +238,88 @@ for i, a in sorted(ssvid.items()):
     print(f'Ator Coadjuvante: {a[1]}')
     print(10*"~")
 
+'''
+7. Modifique o programa anterior de modo que o usuário informe o nome de uma série e o novo programa indique os nomes
+dos atores principais. Caso a série não esteja cadastrada, o programa deve informar isso ao usuário.
+'''
+
+series= {}
+
+#NOSSO DICIONÁRIO POSSUI APENAS UMA SÉRIE CADASTRADA NESTE EXEMPLO:
+series.update({'dois homens e meio': ['Charlie Sheen', 'Jon Cryer']})
+
+while True:
+
+    n = input('Digite o nome da série em letras minúsculas: ')
+
+    if n.isupper():
+        print('Você digitou o nome da série com letras maiúsculas')
+        continue
+
+    if n in series:
+        print(f'Atores principais: {series[n]}')
+        break
+
+    else:
+        print('não há séries com este nome')
+        break
+
+'''
+8. Construa um programa que utilize um dicionário para representar a tabela abaixo.
+
+Código              Nome                    Valor (R$)
+1                   Monitor LED 24”         599,99
+2                   Teclado wireless        59,26
+3                   Mouse wireless          19,90
+4                   Cartucho colorido       54,00
+
+O programa deve aplicar um desconto de 10% sobre os produtos com o valor acima de R$ 50,00 e acrescentar à descrição a
+string (em promoção).
+'''
+
+produtos = {}
+
+produtos.update({'1': ['Monitor LED 24', 599.99]})
+produtos.update({'2': ['Teclado Wireless', 59.26]})
+produtos.update({'3': ['Mouse Wireless', 19.90]})
+produtos.update({'4': ['Cartucho Colorido', 54.00]})
+
+for i,a in produtos.items():
+    if a[1] >50:
+        a[0]+=" (em promoção)"
+
+for i in produtos.items():
+    print(i)
+
+'''
+9. Crie um dicionário para armazenar os dados da tabela anterior (de funcionarios). 
+Em seguida, o programa deve imprimir uma listagem de
+mulheres do setor de TI que recebem acima de R$ 3.000,00.
+'''
+
+funcionarios = {'1': ['Ana', 'f', 'ti',7,3200],
+'2': ['Beatriz', 'f','ti',4, 3720],
+'3': ['Carla','f','ti',2, 3920],
+'4': ['Daniela','f','rh',2, 2100],
+'5': ['Emilio', 'm','rh',7, 4235.12],
+'6': ['Fernando', 'm','marketing',7, 1200],
+'7': ['Gabriela', 'f','marketing',8,7234.89],
+'8': ['Hernandes', 'm','ti','marketing',6,4234.12],
+'9': ['Ítalo', 'm','rh',13,13934.23],
+'10': ['Janaína', 'f','rh',7,9341.89]}
 
 
+for i,a in funcionarios.items():
+    if a[1] == "f" and a[2]=='ti' and a[4] > 3000:
+        print(i, a)
+'''
+10. Modifique a questão anterior para listar os homens que
+não são do setor de TI.
+'''
 
-
+for i,a in funcionarios.items():
+    if a[1] == "m" and a[2]!='ti':
+        print(i, a)
 
 
 
