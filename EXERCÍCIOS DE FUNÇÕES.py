@@ -50,71 +50,36 @@ linha()
 
 from time import sleep
 
-def contador(inicio, fim, passo):
+def contador(i, f, p):
+
+    if p==0:
+        p=1
+
+    if i>f and p>0:
+        p*=-1
+      
+    print (f'Contagem de {i} até {f} de {abs(p)} em {abs(p)}:')
+    sleep(1.5)
+
+    for i in range(i, f +(1 if p>0 else -1) ,p):
+        print (i, end=' ', flush=True)
+        sleep(0.3)
+
+    sleep(0.3)
+    print('FIM')
+    print(20* '-=')
+
     
-    if fim >= inicio:
-        print(15 * '-=-')
-        print(f'Contagem de {inicio} até {fim} de {passo} em {passo}:')
-        for i in range(inicio,fim+1,passo):
-            print(i, end= ' ', flush=True)
-            sleep(0.3)
-        print('FIM')
+contador(1,10,1)
+contador(10, 0, 2)
 
+print('AGORA É A SUA VEZ!')
+i=int(input('Início: '))
+f=int(input('Fim: '))
+p=int(input('Passo: '))
+contador(i,f,p)
 
-        if passo==0:
-            print(15 * '-=-')
-            print(f'Contagem de {inicio} até {fim} de 1 em 1:')
-            for i in range(inicio,fim+1,1):
-                print(i, end= ' ', flush=True)
-                sleep(0.3)
-            print('FIM')
-
-    
-    else:
-        if passo>0:
-            print(15 * '-=-')
-            #Se o passo for um número positivo:
-
-            print(f'Contagem de {inicio} até {fim} de {passo} em {passo}:')
-
-            #Convertemos o passo para m número negativo:
-
-            passo = passo - (passo*2)
-
-            for i in range(inicio,fim-1,passo):
-                print(i, end= ' ', flush=True)
-                sleep(0.3)
-            print('FIM')
-        
-        
-        elif passo<0:
-                positivo = passo - (passo*2)
-                print(15 * '-=-')
-                print(f'Contagem de {inicio} até {fim} de {positivo} em {positivo}:')
-                for i in range(inicio,fim-1,passo):
-                    print(i, end= ' ', flush=True)
-                    sleep(0.3)
-                print('FIM')
-        
-        else:
-            if passo==0:
-                print(15 * '-=-')
-            print(f'Contagem de {inicio} até {fim} de 1 em 1:')
-            for i in range(inicio,fim-1,-1):
-                print(i, end= ' ', flush=True)
-                sleep(0.3)
-            print('FIM')
-
-
-contador(1, 10, 1)
-contador(10,0,2)
-contador(10,0,0)
-contador(5,-5,0)
-contador(10,0,-1)
-inicio= int(input('início: '))
-fim=int(input('Fim: '))
-passo=int(input("Passo: "))
-contador(inicio,fim,passo)
+print('MUITO OBRIGADO POR USAR ESTE PROGRAMA!')
 
 
 #3 - crie uma função chamada maior(), que receba vários parâmetros com valores inteiros. seu programa deve analisar todos os parâmetros
@@ -155,3 +120,4 @@ def somaPar():
 
 sorteia()
 somaPar()
+
