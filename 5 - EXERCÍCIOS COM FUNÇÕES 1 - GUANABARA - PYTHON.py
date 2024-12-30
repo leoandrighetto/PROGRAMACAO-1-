@@ -52,36 +52,65 @@ linha()
 
 from time import sleep
 
+
 def contador(i, f, p):
+    if p == 0:
+        p = 1
 
-    if p==0:
-        p=1
-
-    if i>f and p>0:
-        p*=-1
-      
-    print (f'Contagem de {i} até {f} de {abs(p)} em {abs(p)}:')
+    if i > f and p > 0:
+        p *= -1
+    print()
+    print(f'Contagem de {i} até {f} de {abs(p)} em {abs(p)}:')
     sleep(1.5)
-
-    for i in range(i, f +(1 if p>0 else -1) ,p):
-        print (i, end=' ', flush=True)
+    print()
+    for i in range(i, f + (1 if p > 0 else -1), p):
+        print(i, end=' ', flush=True)
         sleep(0.3)
 
     sleep(0.3)
     print('FIM')
-    print(20* '-=')
+    print(15 * '-=')
+    sleep(1)
 
-    
+
 contador(1,10,1)
-contador(10, 0, 2)
+contador(10,0,2)
 
 print('AGORA É A SUA VEZ!')
-i=int(input('Início: '))
-f=int(input('Fim: '))
-p=int(input('Passo: '))
-contador(i,f,p)
+print()
 
-print('MUITO OBRIGADO POR USAR ESTE PROGRAMA!')
+i = int(input('Início: '))
+f = int(input('Fim: '))
+p = int(input('Passo: '))
+contador(i, f, p)
+
+while True:
+    print()
+    per = str(input('VOCÊ DESEJA TENTAR MAIS UMA VEZ (S/N)? '))
+
+    if per.lower()=='n':
+      
+        print()
+        print('OBRIGADO POR USAR MEU PROGRAMA!!!')
+        print(20 * '-=')
+      break
+
+    elif per.lower()=='s':
+
+        print('MAIS UMA VEZ ENTÃO!')
+        print()
+        i = int(input('Início: '))
+        f = int(input('Fim: '))
+        p = int(input('Passo: '))
+        contador(i, f, p)
+
+    else:
+        while True:
+            print(10 * 'X   ')
+            print('DIGITE UMA OPÇÃO VÁLIDA (S OU N)')
+            print()
+            break
+
 
 
 #4 - crie uma função chamada maior(), que receba vários parâmetros com valores inteiros. seu programa deve analisar todos os parâmetros
