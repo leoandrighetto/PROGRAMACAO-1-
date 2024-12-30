@@ -52,4 +52,14 @@ print(l)
 print(par)
 print(impar)
 
-#
+# Faça um programa em que o usuário digite um número inteiro e depois o programa verifica se este número etá dentro da série de fibonacci.
+
+
+l=[0,1]
+n=int(input())
+for i in range(n):
+    l.append(l[-1]+l[-2])
+if n in l:
+    print('sim')
+else:
+    print('não')
