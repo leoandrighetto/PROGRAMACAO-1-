@@ -136,21 +136,21 @@ linha()
 def notas(* notas, situação = False):
 
     qua=len(notas)
-    maior=max(notas)
-    menor=min(notas)
-    media=sum(notas)/len(notas)
+    maior = max(notas)
+    menor = min(notas)
+    media = round(sum(notas)/len(notas), 2)
     
-    dic={'Quantidade de notas': qua,
+    dic = {'Quantidade de notas': qua,
          'Maior Nota': maior,
          'Menor nota': menor,
          'Média da turma': media}
     
     if situação:
 
-        if media>7:
+        if media > 7:
             dic.update ({'Situação': 'Boa'})
             return dic
-        elif media >=5 and media <7:
+        elif media >= 5 and media < 7:
             dic.update ({'Situação': 'regular'})
             return dic
         else:
