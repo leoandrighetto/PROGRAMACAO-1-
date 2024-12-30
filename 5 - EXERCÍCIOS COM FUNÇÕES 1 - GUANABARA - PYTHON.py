@@ -54,6 +54,17 @@ from time import sleep
 
 
 def contador(i, f, p):
+    
+    """
+    -> Faz uma contagem e mostra na tela.
+    :para i: início da contagem
+    :para f: final da contagem
+    :para p: passo da contagem
+    :return: sem retorno
+    
+    Função criada por Leonardo Andrighetto Linhares.
+    """
+
     if p == 0:
         p = 1
 
@@ -85,6 +96,7 @@ p = int(input('Passo: '))
 contador(i, f, p)
 
 while True:
+
     print()
     per = str(input('VOCÊ DESEJA TENTAR MAIS UMA VEZ (S/N)? '))
 
@@ -93,7 +105,7 @@ while True:
         print()
         print('OBRIGADO POR USAR MEU PROGRAMA!!!')
         print(20 * '-=')
-      break
+        break
 
     elif per.lower()=='s':
 
@@ -110,6 +122,8 @@ while True:
             print('DIGITE UMA OPÇÃO VÁLIDA (S OU N)')
             print()
             break
+
+help(contador)
 
 
 
