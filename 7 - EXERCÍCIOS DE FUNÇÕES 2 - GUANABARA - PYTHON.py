@@ -93,3 +93,31 @@ def leiaInt(valor):
 n = leiaInt (input('Digite um número: '))
 print(f'Você digitou {n}')
 
+linha()
+
+# 4 - CRIE UM PROGRAMA QUE RECEBA UMA FUNÇÃO CHAMADA FICHA QUE RECEBA DOIS PARÂMETROS OPCIONAIS:
+# O NOME DE UM JOGADOR E QUANTOS GOLS ELE MARCOU
+# O PROGRAMA DEVERÁ SER CAPAZ DE MOSTRAR A FICHA DO JOGADOR, MESMO QUE AS INFORMAÇÕES NÃO
+# TENHAM SIDO ESCREITAS CORRETAMENTE.
+
+def ficha(nome='<desconhecido>', gols=0):
+    print (f'O jogador {nome} fez {gols} gol(s).')
+
+
+n = str(input('Nome do jogador: '))
+g = str(input('Número de gols: '))
+
+if g.isnumeric():
+    g=int(g)
+else:
+    g=0
+
+if n.strip()=='':
+
+    ficha(gols=g)
+else:
+
+    ficha(n,g)
+
+
+
