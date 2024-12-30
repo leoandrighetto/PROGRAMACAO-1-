@@ -119,5 +119,50 @@ else:
 
     ficha(n,g)
 
+linha()
+
+# 5- FAÇA UM PROGRAMA QUE TENHA UMA FUNÇÃO NOTAS()
+# QUE PODE RECEBER VÁRIAS NOTAS DE ALUNOS
+# E VAI RETORNAR UM DICIONÁRIO COM AS SEGUINTES INFORMAÇÕES:
+
+# -QUANTIDADE DE NOTAS
+# -A MAIOR NOTA
+# -A MENOR NOTA
+# -A MÉDIA DA TURMA
+# -A SITUAÇÃO (OPCIONAL)
+
+ # ADICIONE TAMBÉM AS DOCSTRINGS DA FUNÇÃO.
+
+def notas(* notas, situação = False):
+
+    qua=len(notas)
+    maior=max(notas)
+    menor=min(notas)
+    media=sum(notas)/len(notas)
+    
+    dic={'Quantidade de notas': qua,
+         'Maior Nota': maior,
+         'Menor nota': menor,
+         'Média da turma': media}
+    
+    if situação:
+
+        if media>7:
+            dic.update ({'Situação': 'Boa'})
+            return dic
+        elif media >=5 and media <7:
+            dic.update ({'Situação': 'regular'})
+            return dic
+        else:
+            dic.update ({'Situação': 'Péssima'})
+            return dic
+    else:
+        return dic
+
+
+print(notas(5.5, 9.5, 18, 6.5))
+print()
+print(notas(5.5, 9.5, 18, 6.5, situação = True))
+
 
 
