@@ -1,5 +1,6 @@
 # 1 - Desenvolva uma função que peça dois valores, sendo estes, a largura e o comprimento de um terreno, 
 # e depois mostre para o usuário a área total deste terreno.
+
 def linha():
   print()
   print(50 * '-')
@@ -41,9 +42,10 @@ escreva('texto')
 
 linha()
 
-# 3 - faça um programa que tenha uma função chamada contador(), 
-# que receba três parâmetros: início, fim e passo e realize a contagem.
+# 3 - faça um programa que tenha uma função chamada contador(), que receba três parâmetros: início, fim e passo e realize a contagem.
+
 # seu programa deve realizar três contagens:
+
 # a) de 1 até 10, de 1 em 1
 # b) de 10 até 0, de 2 em 2.
 # c) uma contagem personalizada
@@ -82,7 +84,7 @@ contador(i,f,p)
 print('MUITO OBRIGADO POR USAR ESTE PROGRAMA!')
 
 
-#3 - crie uma função chamada maior(), que receba vários parâmetros com valores inteiros. seu programa deve analisar todos os parâmetros
+#4 - crie uma função chamada maior(), que receba vários parâmetros com valores inteiros. seu programa deve analisar todos os parâmetros
 #e dizer qual é o maior.
 
 def maior (*n):
@@ -94,7 +96,7 @@ def maior (*n):
 
 maior (1,2,10,4,5)
 
-#4- faça um programa que tenha uma lista chamada numeros e duas funções  chamadas sorteia() e somaPar().
+# 5 - faça um programa que tenha uma lista chamada numeros e duas funções  chamadas sorteia() e somaPar().
 # a primeira função vai sortear 5 números e coloca-los dentro da lista e a segunda vai mostrar a soma dos numeros pares dentro desta.
 
 from random import randrange
