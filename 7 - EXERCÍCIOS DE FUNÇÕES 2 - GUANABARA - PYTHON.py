@@ -74,5 +74,22 @@ print(fatorial(5, True))
 
 linha()
 
+#3 - CRIE UM PROGRAMA QUE TENHA UMA FUNÇÃO CHAMADA LEIAINT() 
+# QUE VAI FUNCIONAR DE FORMA SEMELHANTE AO INPUT() 
+#PORÉM APENAS QUANDO LER UM NÚMERO INTEIRO.
 
+def leiaInt(valor):
+    while True:
+        if valor.isnumeric():
+            return valor
+        else:
+            while True:
+                print('ERRO! DIGITE UM NÚMERO INTEIRO!')
+                False
+                break
+        valor = input('Digite um número: ')
+
+
+n = leiaInt (input('Digite um número: '))
+print(f'Você digitou {n}')
 
