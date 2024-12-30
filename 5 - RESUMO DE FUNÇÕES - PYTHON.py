@@ -173,5 +173,29 @@ A soma, multiplicação e divisão usando os números 5 e 4 são (9, 20, 1.25)
 
 linha()
 
+# 3 - FAÇA UM PROGRAMA QUE RECEBA UMA FUNÇÃO CHAMADA FICHA(),
+# QUE RECEBA DOIS PARÂMETROS OPCIONAIS. O NOME DE UM JOGADOR E QUANTOS GOLS ELE MARCOU
+
+# O PROGRAMA DEVE MOSTRAR A FICHA DO JOGADOR MESMO QUE ALGUM DADO NÃO TENHA SIDO INFORMADO CORRETAMENTE.
+
+def ficha(nome='<Desconhecido>', gols=0):
+    print(f'O jogador {nome} fez {gols} gol(s) no campeonato.')
+
+# AS DUAS VARIÁVEIS ESTÃO COMO STRINGS, PARA SÓ DEPOIS VERIFICAR SE GOLS POSSUI VALOR NUMÉRICO.
+n=str(input('Nome do jogador: '))
+g=str(input('Quantidade de gols: '))
 
 
+if g.isnumeric():   #VERIFICA SE O VALOR DE g É NUMÉRICO.
+        g = int(g)  #SE SIM, g RECEBE O MESMO VALOR DIGITADO E PASSA A SER UM INT.
+else:
+    g = 0           #SENÃO, PASSA A SER 0
+
+
+# NOVIDADE:
+# É POSSÍVEL SELECIONAR QUANDO A FUNÇÃO SERÁ EXECUTADA:
+
+if n.strip() == '':     #SE O VALOR DE N ESTIVER VAZIO (MESMO ESTANDO COM ESPAÇOS - .STRIP()) 
+     ficha(gols=g)      #APENAS O PARÂMETRO GOLS MOSTRARÁ SEU VALOR.
+else:
+     ficha(n, g)        #SENÃO, É MOSTRADO OS DOIS VALORES COMO FORAM ATRIBUÍDOS.
