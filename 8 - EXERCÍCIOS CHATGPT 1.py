@@ -182,25 +182,33 @@
 # Dada uma lista de números inteiros, 
 # escreva um programa que ordene a lista em ordem crescente sem usar o método sort().
 
-# l = [5,8,2,4,3,7,9,9]
-# l1 = []
+# def crescente():
+#     l = []
 
-# for i in l:
-#     if i<=l[-1]:
-#         l1.insert(0,i)
-    
-# print(l1)
+#     n = int(input('DIGITE A QUANTIDADE DE NÚMEROS DE SUA LISTA: '))
+#     for i in range(n):
+#         e = int(input('DIGITE UM NÚMERO PARA A SUA LISTA: '))
+#         l.append(e)
 
+#     ln = []
+#     for a in range(len(l)):
+#         for i in l:
+#             ln.append(min(l))
+#             del l[l.index(min(l))]
+#     print(f'SUA LISTA EM ORDEM CRESCENTE: {ln}') 
 
-
-l = [71,15,72,17,18,18]
-
-lnova = []
-
-for i in range(len(l)):
-    print(l[0])
-
-
-# l.insert(0,4)
+# crescente()
 
 # print(l[i])
+
+# # 11 Cédulas de Saque (Caixa Eletrônico)
+# Um caixa eletrônico precisa entregar o menor número possível de cédulas para um saque. 
+# Escreva um programa que leia o valor a ser sacado (valor inteiro) e informe quantas cédulas de cada valor serão entregues.
+# Considere que o caixa possui cédulas de R$100, R$50, R$20, R$10, R$5 e R$2. Não há necessidade de tratar valores que não podem ser sacados.
+    
+# 12. Média Ponderada de Notas
+# Em uma prova com três questões, o candidato pode obter diferentes pesos para cada questão. 
+# Escreva um programa que leia as três notas do aluno e os respectivos pesos, e calcule a média ponderada.
+
+# 3. Soma dos Divisores
+# Dado um número inteiro positivo, escreva um programa que calcule a soma de todos os seus divisores, incluindo ele mesmo.
