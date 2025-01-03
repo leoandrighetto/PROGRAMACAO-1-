@@ -202,13 +202,42 @@
 # print(l[i])
 
 # # 11 Cédulas de Saque (Caixa Eletrônico)
-# Um caixa eletrônico precisa entregar o menor número possível de cédulas para um saque. 
-# Escreva um programa que leia o valor a ser sacado (valor inteiro) e informe quantas cédulas de cada valor serão entregues.
-# Considere que o caixa possui cédulas de R$100, R$50, R$20, R$10, R$5 e R$2. Não há necessidade de tratar valores que não podem ser sacados.
-    
+
+# # Um caixa eletrônico precisa entregar o menor número possível de cédulas para um saque. 
+# # Escreva um programa que leia o valor a ser sacado (valor inteiro) e informe quantas cédulas de 
+# # cada valor serão entregues.
+# # Considere que o caixa possui cédulas de R$100, R$50, R$20, R$10, R$5, R$2 e R$1.
+
+# n = int(input('INFORME O VALOR A SER SACADO (R$): '))
+
+# n100 = n//100
+# n = n%100
+# n50 = (n%100)//50
+# n = n%50
+# n20 = (n%50)//20
+# n = n%20
+# n10 = (n%20)//10
+# n = n%10
+# n5 =( n%10)//5
+# n = n%5
+# n2 = (n%5)//2
+# n = n%2
+# n1 = (n%2)//1
+
+# print(f'NOTAS DE 100: {n100}')
+# print(f'NOTAS DE 50: {n50}')
+# print(f'NOTAS DE 20: {n20}')
+# print(f'NOTAS DE 10: {n10}')
+# print(f'NOTAS DE 5: {n5}')
+# print(f'NOTAS DE 2: {n2}')
+# print(f'NOTAS DE 1: {n1}')
+
+
 # 12. Média Ponderada de Notas
 # Em uma prova com três questões, o candidato pode obter diferentes pesos para cada questão. 
 # Escreva um programa que leia as três notas do aluno e os respectivos pesos, e calcule a média ponderada.
+
+
 
 # 3. Soma dos Divisores
 # Dado um número inteiro positivo, escreva um programa que calcule a soma de todos os seus divisores, incluindo ele mesmo.
