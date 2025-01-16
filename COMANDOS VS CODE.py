@@ -2,7 +2,8 @@
 # 1 - SELECIONAR PASTA
 # 2 - NO TERMINAL, DIGITAR -> python -m venv venv <- PARA CRIAR O AMBIENTE
 # 3 - NO POWERSHELL DO SEU COMPUTADOR, CASO SEJA NECESSÁRIO, PERMITA A ATIVAÇÃO DE SCRIPTS DIGITANDO -> 
-# 3 - NO POWERSHELL DO SEU COMPUTADOR, CASO SEJA NECESSÁRIO, PERMITA A ATIVAÇÃO DE SCRIPTS DIGITANDO -> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser, E depois S ou Y (sim, yes).
+# 3 - NO POWERSHELL DO SEU COMPUTADOR, CASO SEJA NECESSÁRIO, PERMITA A ATIVAÇÃO DE SCRIPTS DIGITANDO 
+# -> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser, E depois S ou Y (sim, yes).
 # 4 - ATIVAR O AMBIENTE DIGITANDO -> .\venv\Scripts\activate
 
 
