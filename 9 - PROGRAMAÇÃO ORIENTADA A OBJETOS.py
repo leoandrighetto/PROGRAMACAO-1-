@@ -19,10 +19,10 @@ class Alunos(): # DEFINE A CLASSE
     
 
 
-aluno1 = Alunos('Leonardo','26','2024016743','ADS') #DECLARA UM OBJETO (NESTE CASO UM ALUNO)
+aluno1 = Alunos('Leonardo','26','2024016743','ADS') #DECLARA UM OBJETO (NESTE CASO O ALUNO LEONARDO)
 
 # PRINTS
 
-aluno1.Situacao(7)  
+aluno1.Situacao(10)  
 print()
 print(aluno1.Apresentar())
