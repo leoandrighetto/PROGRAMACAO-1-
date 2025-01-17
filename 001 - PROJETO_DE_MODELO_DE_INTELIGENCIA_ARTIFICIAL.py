@@ -11,15 +11,7 @@
 # PASSO 5 - USAR O MELHOR MODELO PARA FAZER AS PREVISÕES DE NOVOS CLIENTES
 
 
-
-
-
-
 # divisao_celula divisao_celula divisao_celula divisao_celula divisao_celula
-
-
-
-
 
 
 # PASSO 1 - IMPORTAR A BASE DE DADOS
@@ -30,14 +22,7 @@ tabela = pd.read_csv("clientes.csv")
 display(tabela)
 
 
-
-
-
 # divisao_celula divisao_celula divisao_celula divisao_celula divisao_celula()
-
-
-
-
 
 
 # PASSO 2 - PREPARAR A BASE DE DADOS PARA A IA 
@@ -74,30 +59,18 @@ tabela['comportamento_pagamento'] = cod_comportamento.fit_transform(tabela['comp
 display(tabela.info())
 
 
-
-
-
-
-
 # divisao_celula divisao_celula divisao_celula divisao_celula divisao_celula()
 
 
-
-
-
-   
 #PASSO 2.1
 
 # A COLUNA (y) SERÁ A COLUNA QUE QUEREMOS PREVER:
 y = tabela['score_credito']
 
 
-
 x = tabela.drop(columns = ['score_credito', 'id_cliente']) # id do cliente também não serve para nada.
 # A COLUNA (x) SERÁ AS COLUNAS DE TREINAMENTO  
 # TODAS AS COLUNAS MENOS A QUE QUEREMOS PREVER
-
-
 
 
 # SEPARAMOS A BASE ENTRE ESTAS DUAS VARIÁVEIS PARA TREINAR NOSSA IA USANDO UMA FUNÇÃO DA BIBLIOTECA SCIKIT-LEARN:
@@ -115,14 +88,7 @@ x_treino, x_teste, y_treino, y_teste = train_test_split (x, y, test_size = 0.3)
 #---
 
 
-
-
-
-
 # divisao_celula divisao_celula divisao_celula divisao_celula divisao_celula()
-
-
-
 
 
 # PASSO 3 - TREINAR A INTELIGENCIA ARTIFICIAL -> CRIAR O MODELO: NOTA DE CRÉDITO: BOA, OK, RUIM
@@ -132,7 +98,6 @@ x_treino, x_teste, y_treino, y_teste = train_test_split (x, y, test_size = 0.3)
 # Passo 1 - IMPORTAR A IA
 # Passo 2 - CRIAR A IA
 # Passo 3 - TREINAR A IA
-
 
 
 # VAMOS IMPORTAR DOIS MODELOS DIFERENTES QUE APRENDEM DE MANEIRAS DIFERENTES E TESTAR CADA UMA DELAS.
@@ -157,7 +122,6 @@ from sklearn.neighbors import KNeighborsClassifier
 # Passo 2 - CRAIR A IA ATRIBUINDO OS MODELOS À VARIÁVEIS
 modelo_arvoredecisao = RandomForestClassifier()
 modelo_knn = KNeighborsClassifier()
-
 
 
 # Passo 3 - TREINAR A IA ATRIBUINDO ÀS VARIÁVEIS MODELOS O X_TREINO, Y_TREINO
