@@ -44,7 +44,12 @@ class Ponto():
 
  # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO
 
-from exercicios import Ingresso,Retangulo,Ponto
+from p_classes.classes import Ingresso,Retangulo,Ponto,Lista
+
+def linha():
+    print('---')
+    print('---')
+    print('---')
 
 # #EXERCÍCIO 1
 # Crie uma classe chamada Ingresso, que possua o nome do
@@ -56,8 +61,9 @@ from exercicios import Ingresso,Retangulo,Ponto
 evento = Ingresso('Show dos Beatles', "500.00")
 
 print (evento)
-print(Ingresso.exibirValor(evento))
+print (Ingresso.exibirValor(evento))
 
+linha()
 
 # #EXERCÍCIO 2
 # 2. Crie uma classe chamada Retangulo, a qual possua os atributos 
@@ -71,6 +77,7 @@ print(Retangulo.calcularArea(medida))
 
 print(Retangulo.calcularPerimetro(medida))
 
+linha()
 
 # #EXERCÍCIO 3
 
@@ -91,3 +98,15 @@ print(pontos[1])
 print(pontos[2])
 print(pontos[3])
 
+linha()
+
+# EXERCICIO 4 (IMPORTANTE DE CONFERIR)
+# Crie uma classe Lista¹ que receba um atributo do tipo list
+# e que tenha um método o qual retorne os elementos da lista
+# sem repetição. Crie o programa de teste.
+
+nova_lista = Lista([12,43,45,45,67,67,11,00,1,34]).El_Ordenados()                                                 
+
+print(nova_lista)
+
+linha()
