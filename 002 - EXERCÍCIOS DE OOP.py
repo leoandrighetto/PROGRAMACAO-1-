@@ -41,8 +41,123 @@ class Ponto():
     def __str__(self):
         return f'{self.nome}: ({self.x}, {self.y})'
 
+linha()
 
- # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO
+
+# # EXERC 4:
+
+# # Crie uma classe Lista¹ que receba um atributo do tipo list
+# # e que tenha um método o qual retorne os elementos da lista
+# # sem repetição. Crie o programa de teste.
+
+class Lista():
+
+    def __init__(self):
+        self.itens = []
+
+    def ele_sem_duplicatas(self,itens):
+        self.itens = itens
+        return list(set(self.itens))
+    
+
+#3 EXER 5:
+
+# 5. Implemente uma calculadora que receba dois operadores
+# utilizando os conceitos de orientação a objetos aprendidos. Os
+# atributos op1 e op2 (operadores) são iniciados no construtor e os
+# métodos somar(), subtrair(), multiplicar(), dividir()
+# e calcularPotencia() realizam as respectivas ações nesses
+# atributos. Crie o programa de teste para a classe Calculadora.
+
+class Calculadora():
+    def __init__(self,op1,op2):
+        self.op1 = op1
+        self.op2 = op2
+
+    def somar(self):
+        soma = self.op1 + self.op2
+        return soma
+    
+    def subtrair(self):
+        sub = self.op1 - self.op2
+        return sub
+
+    def multiplicar(self):
+        mul = self.op1 * self.op2
+        return mul
+    
+    def dividir(self):
+        div = self.op1 / self.op2
+        return div
+
+
+    def calcularPotencia(self):
+        pot = self.op1**(self.op2)
+        return pot
+
+
+# # EXER 6:
+# 6. Crie a classe Funcionario com os atributos nome e
+# salario, recebidos pelo método construtor, e o método
+# aumentarSalario(porcentagem) cujo parâmetro é a porcentagem de aumento. 
+# Implemente um programa de teste
+# para a classe, criando dois funcionários e simulando o aumento de 
+# salário de 20% para um e 50% para o outro.
+
+class Funcionario():
+    def __init__(self,nome,salario):
+        self.nome = nome
+        self.salario = salario
+
+    def aumentarSalario(self,porcentagem):
+        self.porcentagem = porcentagem
+        reajuste = (self.salario*self.porcentagem)/100
+        total = self.salario + reajuste
+        return total
+    
+# 7. Implemente uma classe Carro, que tenha as propriedades
+# consumo e combustível refletindo o consumo do carro em
+# km/l e o combustível no tanque, respectivamente. O consumo
+# é atribuído no método construtor, enquanto o combustível
+# inicia com 0. Crie o método andar() para simular o ato de
+# dirigir o veículo por uma certa distância (isso vai reduzir a
+# quantidade de combustível no tanque). Crie um método
+# exibirCombustivel(), que mostrará o nível atual em
+# que o carro se encontra e o método abastecer(litros)
+# para aumentar o nível de combustível do carro. Agora, crie o
+# programa de teste e simule o passeio de um veículo.
+
+class Carro():
+
+    def __init__(self,consumo):
+
+        self.consumo = consumo
+        self.combustivel = 0
+        self.distancia = 0
+ 
+    def andar(self,distancia):
+        self.distancia = distancia
+        return distancia
+    
+    def abastecer(self,litros):
+        self.litros = litros
+
+        self.combustivel += litros
+
+        return litros
+
+    def exibirCombustivel(self):
+
+        nivel = self.litros
+
+        if self.distancia > 0:
+            return nivel - (self.distancia / self.consumo)
+        elif self.consumo > 0:
+            return nivel
+        else:
+            return nivel
+        
+# IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO
 
 from p_classes.classes import Ingresso,Retangulo,Ponto,Lista
 
@@ -108,5 +223,61 @@ linha()
 nova_lista = Lista([12,43,45,45,67,67,11,00,1,34]).El_Ordenados()                                                 
 
 print(nova_lista)
+
+linha()
+
+# #3 EXER 5:
+
+# # 5. Implemente uma calculadora que receba dois operadores
+# # utilizando os conceitos de orientação a objetos aprendidos. Os
+# # atributos op1 e op2 (operadores) são iniciados no construtor e os
+# # métodos somar(), subtrair(), multiplicar(), dividir()
+# # e calcularPotencia() realizam as respectivas ações nesses
+# # atributos. Crie o programa de teste para a classe Calculadora.
+
+# print(classes.Calculadora(3,3).somar())
+# print(classes.Calculadora(3,3).subtrair())
+# print(classes.Calculadora(3,3).multiplicar())
+# print(classes.Calculadora(3,3).dividir())
+# print(classes.Calculadora(3,3).calcularPotencia())
+
+linha()
+
+# # EXER 6:
+# 6. Crie a classe Funcionario com os atributos nome e
+# salario, recebidos pelo método construtor, e o método
+# aumentarSalario(porcentagem) cujo parâmetro é a porcentagem de aumento. 
+# Implemente um programa de teste
+# para a classe, criando dois funcionários e simulando o aumento de 
+# salário de 20% para um e 50% para o outro.
+
+
+# funcionario1 = classes.Funcionario('Leonardo',1555)
+# funcionario2 = classes.Funcionario('Paola',1555)
+
+# print(funcionario1.aumentarSalario(20))
+# print(funcionario2.aumentarSalario(50))
+
+# 7. Implemente uma classe Carro, que tenha as propriedades
+# consumo e combustível refletindo o consumo do carro em
+# km/l e o combustível no tanque, respectivamente. O consumo
+# é atribuído no método construtor, enquanto o combustível
+# inicia com 0. Crie o método andar() para simular o ato de
+# dirigir o veículo por uma certa distância (isso vai reduzir a
+# quantidade de combustível no tanque). Crie um método
+# exibirCombustivel(), que mostrará o nível atual em
+# que o carro se encontra e o método abastecer(litros)
+# para aumentar o nível de combustível do carro. Agora, crie o
+# programa de teste e simule o passeio de um veículo.
+
+carro1 = classes.Carro(1)
+carro1.abastecer(50)
+print(f'Abasteci {carro1.exibirCombustivel()} Litros')
+print()
+print(f'Andei {carro1.andar(15)} Kilometros')
+print()
+print(f'Fiquei com {carro1.exibirCombustivel()} Litros')
+carro1.consumo = 1
+print(carro1.exibirCombustivel())
 
 linha()
