@@ -156,6 +156,27 @@ class Carro():
             return nivel
         else:
             return nivel
+
+# 8. Implemente a classe ContaInvestimento semelhante a
+# uma classe ContaBancaria, com a diferença de que se adicione um 
+# atributo taxaJuros. Forneça um construtor que
+# configure tanto o saldo inicial como a taxa de juros. 
+# Forneça um método adicionarJuros() para adicionar juros à conta
+# (definido no atributo). Escreva um programa que construa uma
+# poupança com um saldo inicial de R$ 1.000,00 e uma taxa de juros de 10%. 
+# Depois aplique o método adicioneJuros() cinco
+# vezes e imprima o saldo resultante
+
+class ContaInvestimento():
+
+    def __init__(self,numero,saldo,taxajuros):
+        self.numero = numero
+        self.saldo = saldo
+        self.taxajuros = taxajuros
+    
+    def adicionarJuros(self):
+        self.saldo += self.saldo * (self.taxajuros / 100)
+        return self.saldo
         
 # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO # IMPORTAÇÃO
 
@@ -281,3 +302,16 @@ carro1.consumo = 1
 print(carro1.exibirCombustivel())
 
 linha()
+
+
+#EXERCICIO 8
+
+cliente1 = classes.ContaInvestimento(0, 1000, 10)
+
+cliente1.adicionarJuros()
+cliente1.adicionarJuros()
+cliente1.adicionarJuros()
+cliente1.adicionarJuros()
+print(cliente1.adicionarJuros())
+
+
