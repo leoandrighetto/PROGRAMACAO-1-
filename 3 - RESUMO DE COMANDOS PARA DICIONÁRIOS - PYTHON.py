@@ -162,7 +162,21 @@ for i, a in sorted(compras.items()):
     print(f'{i} ---- {a}')
 
 
+linha()
+
+#ORDENAR CHAVE/VALOR BASEADO-SE NO ITEM QUE ESTÁ NO ÍNDICE (0 = CIDADE, 1 = HABITANTES), com o comando lambda:
+x = compras.items()
+
+x = sorted(x, key = lambda values: values[1])
+#x = sorted(x, key = lambda values: values[0])
+
+
+print(x)
+
+
 Linha()
+
+
 
 
 #CLONANDO UM DICIONARIO:
